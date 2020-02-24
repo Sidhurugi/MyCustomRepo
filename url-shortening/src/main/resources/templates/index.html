@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body>
+   		<h1>URL Shortner Home</h1>
+   		<p>View shortened URLs of the user:  <a th:href="@{/webprivate}">User URLs</a></p>
+   		<p>View shortened URLs of all users: <a th:href="@{/webadmin}">All User URLs</a></p>
+   		<div sec:authorize="isAuthenticated()">
+			Hello <span sec:authentication="name">someone</span>
+			<p><a th:href="@{/logout}">Logout</a></p>
+		</div>
+    </body>
+</html>

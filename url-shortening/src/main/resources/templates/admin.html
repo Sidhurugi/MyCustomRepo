@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+     <head>
+        <title>User URLs</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+    	<meta charset="UTF-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h2>List of URLs</h2>
+<table>
+    <tr>
+        <th>Original Url</th>
+        <th>Shorten Key</th>
+        <th>User</th>
+    </tr>
+    <tr th:each="shortenUrl : ${user}">
+        <td th:text="${shortenUrl.originalUrl}">originalUrl</td>
+        <td th:text="${shortenUrl.shortenKey}">shortenKey</td>
+        <td th:text="${shortenUrl.user}">user</td>
+    </tr>
+</table>
+</html>
